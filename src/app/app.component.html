@@ -1,5 +1,7 @@
 {{title}}
 <input type="text" [(ngModel)]="title">
+<input type="text" [(ngModel)]="power">
+{{power | exponential}}
 <div *ngIf="title === 'Giame'"> 
   El titulo escorrecto
 </div>

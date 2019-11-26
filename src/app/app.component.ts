@@ -9,7 +9,7 @@ import { Product } from './Product';
 export class AppComponent {
   title = 'store';
   names = ['Juan', 'Pablo', 'Duarte'];
-
+  power: number;
   products: Product[] = [
     {
       id: '1',
