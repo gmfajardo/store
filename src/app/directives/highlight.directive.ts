@@ -9,6 +9,6 @@ export class HighlightDirective {
   constructor(private elementRef: ElementRef) {
     elementRef.nativeElement.style.backgroundColor = this.bgcolor;
     console.log('Color' + this.bgcolor);
-   }
+  }
 
 }
