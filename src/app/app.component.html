@@ -18,7 +18,11 @@
   <p *ngSwitchCase="'enmanuel'">Enmanuel</p>
 
 </div>
-<div *ngFor="let product of products">
-  {{product.title}}
-  <img [src]="product.image" alt="">
+<div class="product-grid">
+  
+  <app-product  
+    *ngFor="let product of products"
+    (addingToKart)="addToKart($event)" 
+    [product]="product"></app-product>
+  
 </div>

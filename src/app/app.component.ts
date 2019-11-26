@@ -54,10 +54,14 @@ export class AppComponent {
       description: 'bla bla bla bla bla'
     },
   ];
+
   addItem() {
     this.names.push(this.title);
   }
   deleteItem(index: number) {
     this.names.splice(index, 1);
+  }
+  addToKart(id: string) {
+    console.log('from event' + id);
   }
 }
