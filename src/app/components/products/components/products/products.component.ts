@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/Product';
+import { ProductsService } from 'src/app/core/services/products/products.service';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,7 @@ export class ProductsComponent implements OnInit {
   products: Product[] = [
     {
       id: '1',
-      image: 'assets/images/camiseta.png',
+      image: 'assets/images/archery-1.jpg',
       title: 'Camiseta',
       price: 80000,
       description: 'bla bla bla bla bla'
@@ -52,9 +53,10 @@ export class ProductsComponent implements OnInit {
       description: 'bla bla bla bla bla'
     },
   ];
-  constructor() { }
+  constructor(private productService: ProductsService) { }
 
   ngOnInit() {
+    this.products = this.productService.getAll();
   }
   addToKart(id: string) {
     console.log('from event' + id);
