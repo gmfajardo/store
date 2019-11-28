@@ -13,10 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { ProductsTableComponent } from './components/products-table/products-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent],
+  declarations: [ProductFormComponent, NavComponent, ProductsTableComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -27,7 +31,10 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class AdminModule { }
