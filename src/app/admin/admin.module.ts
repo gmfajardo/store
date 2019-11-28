@@ -21,10 +21,14 @@ import { ProductsDashboardComponent } from './components/products-dashboard/prod
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { ProductsTreeComponent } from './components/products-tree/products-tree.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { ProductsDragAndDropComponent } from './components/products-drag-and-drop/products-drag-and-drop.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, ProductsTableComponent, ProductsDashboardComponent],
+  declarations: [ProductFormComponent, NavComponent, ProductsTableComponent, ProductsDashboardComponent, ProductsTreeComponent, ProductsDragAndDropComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -41,7 +45,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSortModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTreeModule,
+    DragDropModule
   ]
 })
 export class AdminModule { }
