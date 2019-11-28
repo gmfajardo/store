@@ -7,6 +7,7 @@ import { DemoComponent } from './components/demo/demo.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import { LayoutComponent } from './layout/layout/layout.component';
+import { AdminGuard } from './admin.guard';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
       },
       {
         path: 'contact',
+        canActivate:[AdminGuard],
         component: ContactComponent
       }
     ]
