@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
-import { ProductsComponent } from './components/products/products.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
@@ -14,12 +13,12 @@ import { LayoutComponent } from './layout/layout/layout.component';
 import { HomeModule } from './components/home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { ProductsModule } from './components/products/products.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    ProductsComponent,
     ContactComponent,
     DemoComponent,
     PagenotfoundComponent,
@@ -31,6 +30,7 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     FormsModule,
     HomeModule,
+    ProductsModule,
     SharedModule,
     CoreModule
   ],
