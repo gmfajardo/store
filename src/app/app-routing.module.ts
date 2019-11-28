@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 // import { HomeComponent } from './components/home/components/home/home.component';
 // import { ProductsComponent } from './components/products/products.component';
-import { ContactComponent } from './components/contact/contact.component';
+// import { ContactComponent } from './components/contact/contact.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+// import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
@@ -35,12 +35,13 @@ const routes: Routes = [
       },
       {
         path: 'products/:id',
-        component: ProductdetailComponent
+        loadChildren: () =>
+        import('./components/products/products.module').then(m => m.ProductsModule)
       },
       {
         path: 'contact',
-        canActivate:[AdminGuard],
-        component: ContactComponent
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule)
       }
     ]
   },
