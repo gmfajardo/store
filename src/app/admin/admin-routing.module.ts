@@ -7,6 +7,8 @@ import { ProductsDashboardComponent } from './components/products-dashboard/prod
 import { ProductsTreeComponent } from './components/products-tree/products-tree.component';
 import { ProductsDragAndDropComponent } from './components/products-drag-and-drop/products-drag-and-drop.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ProductsComponent } from '../components/products/components/products/products.component';
+import { ProductsFormComponent } from './components/products-form/products-form.component';
 
 
 const routes: Routes = [
@@ -23,8 +25,12 @@ const routes: Routes = [
         component: ProductsTableComponent
       },
       {
-        path: 'list',
+        path: 'products',
         component: ProductsListComponent
+      },
+      {
+        path: 'products/create',
+        component: ProductsFormComponent
       },
       {
         path: 'dashboard',
@@ -37,7 +43,7 @@ const routes: Routes = [
       {
         path: 'dd',
         component: ProductsDragAndDropComponent
-      }
+      },
     ]
   }
 ];
