@@ -23,4 +23,7 @@ export class ProductsService {
   createProduct(product: Product) {
     return this.httpClient.post(`${environment.api_url}/products`,product)
   }
+  updateProduct(id: string, changes: Partial<Product>) {
+    return this.httpClient.put(`${environment.api_url}/products/${id}`,changes);
+  }
 }
