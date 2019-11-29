@@ -28,5 +28,17 @@ export class ProductdetailComponent implements OnInit {
         this.product = product;
       });
   }
-
+  createProduct() {
+    const product: Product = {
+      id: "46",
+      description: "Recurved Bow",
+      image: 'assets/images/archery-3.jpg',
+      price: 456.21,
+      title: 'Bow'
+    };
+    this.productService.createProduct(product)
+      .subscribe((product: Product) => {
+        this.product = product;
+      });
+  }
 }
