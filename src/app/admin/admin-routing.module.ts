@@ -9,6 +9,7 @@ import { ProductsDragAndDropComponent } from './components/products-drag-and-dro
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductsComponent } from '../components/products/components/products/products.component';
 import { ProductsFormComponent } from './components/products-form/products-form.component';
+import { ProductsEditComponent } from './components/products-edit/products-edit.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'products/create',
         component: ProductsFormComponent
+      },
+      {
+        path: 'products/edit/:id',
+        component: ProductsEditComponent
       },
       {
         path: 'dashboard',

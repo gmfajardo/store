@@ -15,6 +15,7 @@ import { ProductsDragAndDropComponent } from './components/products-drag-and-dro
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductsFormComponent } from './components/products-form/products-form.component';
+import { ProductsEditComponent } from './components/products-edit/products-edit.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { ProductsFormComponent } from './components/products-form/products-form.
     ProductsDashboardComponent, 
     ProductsTreeComponent, 
     ProductsDragAndDropComponent, 
-    ProductsListComponent, ProductsFormComponent],
+    ProductsListComponent, ProductsFormComponent, ProductsEditComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

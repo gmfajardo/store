@@ -1,26 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductsService } from 'src/app/core/services/products/products.service';
-import { Router } from '@angular/router';
-import { ProductsListComponent } from '../products-list/products-list.component';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MyValidators } from 'src/utils/MyValidators';
+import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
-  selector: 'app-products-form',
-  templateUrl: './products-form.component.html',
-  styleUrls: ['./products-form.component.scss']
+  selector: 'app-products-edit',
+  templateUrl: './products-edit.component.html',
+  styleUrls: ['./products-edit.component.scss']
 })
-export class ProductsFormComponent implements OnInit {
-
+export class ProductsEditComponent implements OnInit {
+  id: string;
   form: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private productsService: ProductsService,
-    private router: Router) {
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
     this.buildForm();
   }
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.id = params.id;
+      console.log('Id from edit: ' + this.id)
+      this.productsService.getProduct(this.id)
+      .subscribe((product) => {
+        console.log('Product from edit: ' + product);
+        this.form.patchValue({
+          id: product.id,
+          title: product.title,
+          description: product.description,
+          price: product.price,
+          image: product.image
+        });
+      });
+    });
   }
 
   buildForm() {
@@ -36,7 +53,7 @@ export class ProductsFormComponent implements OnInit {
     event.preventDefault();
     if (this.form.valid) {
       const newProduct = this.form.value;
-      this.productsService.createProduct(newProduct)
+      this.productsService.updateProduct(this.id, newProduct)
       .subscribe((resultProduct) => {
         console.log('Result: ' + resultProduct);
         this.router.navigate(['/admin/products']);
