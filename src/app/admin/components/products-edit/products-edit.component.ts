@@ -3,8 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MyValidators } from 'src/utils/MyValidators';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-products-edit',
