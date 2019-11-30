@@ -42,6 +42,10 @@ const routes: Routes = [
         path: 'contact',
         canActivate: [AdminGuard],
         loadChildren: () => import('./components/contact/contact.module').then(m => m.ContactModule)
+      },
+      {
+        path: 'order',
+        loadChildren: () => import('./components/order/order.module').then(m => m.OrderModule)
       }
     ]
   },
