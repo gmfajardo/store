@@ -34,7 +34,8 @@ export class ProductdetailComponent implements OnInit {
       description: "Recurved Bow",
       image: 'assets/images/archery-3.jpg',
       price: 456.21,
-      title: 'Bow'
+      title: 'Bow',
+      quantity: 0
     };
     this.productService.createProduct(product)
       .subscribe((product: Product) => {
